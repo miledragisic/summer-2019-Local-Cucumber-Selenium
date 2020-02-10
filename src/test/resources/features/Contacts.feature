@@ -1,6 +1,7 @@
-@smoke @contacts @VYT-125
+
+
 Feature: Contacts page
-  @driver
+
   Scenario: Menu options
     Given a driver is logged in
     Then the user should see following menu options

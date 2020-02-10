@@ -13,6 +13,16 @@ import java.util.List;
 
 public class BrowserUtils {
 
+    //It will be used to pause our test execution
+    //just provide number of seconds as a parameter
+    public static void wait(int seconds) {
+        try {
+            Thread.sleep(1000 * seconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * Switches to new window by the exact title. Returns to original window if target title not found
      * @param targetTitle

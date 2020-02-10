@@ -1,6 +1,5 @@
 package com.vytrack.step_definitions;
 
-import com.vytrack.pages.ContactsPage;
 import com.vytrack.pages.DashboardPage;
 import com.vytrack.pages.LoginPage;
 import com.vytrack.utilities.BrowserUtils;
@@ -38,6 +37,8 @@ public class LoginWithParametersStepDefs {
         String username = ConfigurationReader.get("driver_username");
         String password = ConfigurationReader.get("driver_password");
         loginPage.login(username, password);
+
+
     }
 
 

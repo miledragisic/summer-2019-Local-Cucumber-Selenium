@@ -24,9 +24,16 @@ public class Hooks {
         if (scenario.isFailed()) {
             final byte[] screenshot = ((TakesScreenshot) Driver.get()).getScreenshotAs(OutputType.BYTES);
             scenario.embed(screenshot, "image/png");
+        }else {
+            System.out.println("\tCleanup");
+            System.out.println("\tTest completed!");
         }
 
+// close webdriver/browser
         Driver.closeDriver();
+
+ //// close database connection
+        //DbUtility.destroyConnection();
     }
 
 }

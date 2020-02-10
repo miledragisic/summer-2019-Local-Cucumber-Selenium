@@ -7,40 +7,48 @@
     <groupId>com.vytrack</groupId>
     <artifactId>summer-2019-local-cucumber-selenium</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
+
     <dependencies>
+
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>3.141.59</version>
         </dependency>
+
         <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>3.7.1</version>
         </dependency>
+
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>4.7.4</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>4.7.4</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
+
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
@@ -49,6 +57,9 @@
         </dependency>
 
     </dependencies>
+
+
+
     <build>
         <plugins>
             <plugin>
@@ -57,14 +68,16 @@
             <version>2.22.2</version>
             <configuration>
                 <parallel>methods</parallel>
-                <perCoreThreadCount>false</perCoreThreadCount>
-                <threadCountMethods>10</threadCountMethods>
+                <perCoreThreadCount>true</perCoreThreadCount>
+                <threadCountMethods>5</threadCountMethods>
+                <rerunFailingTestsCount>1</rerunFailingTestsCount> <!-- how many times to rerun failed tests-->
+                <testFailureIgnore>false</testFailureIgnore> <!--if true, when some test fails Maven will not assume that Build is failed  -->
                 <includes>
-                    <include>**/*CukesRunner.java</include>
+                    <include>**/*CukesRunner.java</include> <!-- 2 ** means all the folders-->
                 </includes>
-                <testFailureIgnore>true</testFailureIgnore>
             </configuration>
         </plugin>
+
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>

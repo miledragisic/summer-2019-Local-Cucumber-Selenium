@@ -1,6 +1,7 @@
-@accounts @VYT-312
+
 Feature: Multiple user types
-  @wip
+
+
   Scenario: Driver user
     Given the user logs in as a "driver"
     When the user goes to "Activities" "Calendar Events"
@@ -16,7 +17,7 @@ Feature: Multiple user types
     When the user goes to "Customers" "Accounts"
     Then the title should contain "Accounts - Customers"
 
-  @smoke
+
   Scenario Outline: Test login with different types
     Given the user logs in as a "<usertype>"
 

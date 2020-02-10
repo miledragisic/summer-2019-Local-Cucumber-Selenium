@@ -22,6 +22,7 @@ public class ContactsStepDefs {
         // get the actual values from UI
         DashboardPage dashboardPage = new DashboardPage();
 
+
         List<String> actualList = new ArrayList<>();
         BrowserUtils.waitFor(2);
 
